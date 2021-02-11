@@ -1,3 +1,5 @@
+进入博客主页戳这里：[WorldkeepTrying Blog's](https://worldkeeptrying.github.io)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/WorldKeeptrying/worldkeeptrying.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
