@@ -207,7 +207,7 @@
     <entry>
       <title><![CDATA[simplenote]]></title>
       <url>/2021/07/11/simplenote/</url>
-      <content type="html"><![CDATA[<h3 id="Sign-In-with-Wordpress"><a href="#Sign-In-with-Wordpress" class="headerlink" title="Sign In with Wordpress"></a><a class="btn" href="https://app.simple.com/" title="">Sign In with Wordpress</a></h3><hr>
+      <content type="html"><![CDATA[<h3 id="Sign-In-with-Wordpress"><a href="#Sign-In-with-Wordpress" class="headerlink" title="Sign In with Wordpress"></a><a class="btn" href="https://public-api.wordpress.com/oauth2/authenticate?scope=global&state=5sTtnF2mh5VoRiBOVYprrue82Gewgj%2Bi56Bz2e6PXQZL3d3QviZ50iABuAt3alsNiEGODA5Miryw%0ASrdlc53PqVLQd2NiJZjuQCIuA%2F4h6Lk%2B0ApHboO3F8RUNoalhEYC%2FDU1dBH2lzMKHf%2B7aMkMCUKa%0AHZXaB8IaEepzN6H7MGs%3D%0A&redirect_uri=https%3A%2F%2Fapp.simplenote.com%2Fwpcc&response_type=code&client_id=57318" title="">Sign In with Wordpress</a></h3><hr>
 <h3 id="直接進入"><a href="#直接進入" class="headerlink" title="直接進入"></a><a class="btn" href="https://app.simple.com/" title="">直接進入</a></h3><div class="note note-danger">
             <p>此服務可能僅在 標準 Net 中可用</p>
           </div>
@@ -291,13 +291,7 @@
 <li>瑪姬的美食</li>
 <li></li>
 </ul>
-<h4 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h4><ul>
-<li>啾啾鞋</li>
-<li>邦尼幫你</li>
-<li>體驗官</li>
-<li></li>
-</ul>
-]]></content>
+<h4 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h4><h5 id="啾啾鞋"><a href="#啾啾鞋" class="headerlink" title="啾啾鞋"></a>啾啾鞋</h5><h5 id="邦尼幫你"><a href="#邦尼幫你" class="headerlink" title="邦尼幫你"></a>邦尼幫你</h5><h5 id="體驗官"><a href="#體驗官" class="headerlink" title="體驗官"></a><a class="btn" href="https://www.youtube.com/channel/UCQTIdBx41To9Gg42aGEO0gQ" title="YouTuber">體驗官</a></h5>]]></content>
       
         <categories>
             
