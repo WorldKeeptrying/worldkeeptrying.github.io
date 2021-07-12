@@ -1,0 +1,15 @@
+﻿{
+  "background_color": "purple",
+  "description": "Shows random fox pictures. Hey, at least it isn't cats.",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ],
+  "name": " LiteApp ",
+  "short_name": "LiteApp",
+  "start_url": "/index.html"
+}
