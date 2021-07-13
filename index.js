@@ -1,7 +1,6 @@
 ﻿let deferredPrompt;
 // 默認不展示按鈕，僅支持 「Add to Home Screen」 功能才展現
 const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
 
 // 規定必須註冊 serviceWorker 才能使用 Add to Home Screen，
 // 且需要監聽 install 和 fetch 事件，可以不處理
