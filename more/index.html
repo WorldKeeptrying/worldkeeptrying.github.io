@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="LiteApp">
+  <meta name="keywords" content="">
+  
+  <title>特别工具 - LiteApp</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":55,"cursorChar":"｜","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":9,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="LiteApp" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Lite App</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                All App
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/Note">
+                <i class="iconfont icon-tags-fill"></i>
+                記錄
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/chat">
+                <i class="iconfont icon-tags-fill"></i>
+                社交
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/buy">
+                <i class="iconfont icon-tags-fill"></i>
+                購物
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/Net">
+                <i class="iconfont icon-tags-fill"></i>
+                網路
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/User">
+                <i class="iconfont icon-tags-fill"></i>
+                個人
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/setting/">
+                <i class="iconfont icon-tags-fill"></i>
+                設定
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/more">
+                <i class="iconfont icon-tags-fill"></i>
+                更多
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="特别工具">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <div class="note note-success">
+            <p>My IP </p><iframe src="https://api.my-ip.io/ip" width="100%" height="27%" frameborder="0" scrolling="no"></iframe>
+          </div>
+<hr>
+<h2 id="漫威-特辑-Marvel-Site"><a href="#漫威-特辑-Marvel-Site" class="headerlink" title="漫威 特辑  Marvel Site"></a>漫威 特辑  <a target="_blank" rel="noopener" href="https://www.marvel.com/">Marvel Site</a></h2><hr>
+<h5 id=""><a href="#" class="headerlink" title=""></a><img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/bw_marvel_template_lob_mas_mob.jpg" srcset="/img/loading.gif" lazyload alt="black widow"></h5><h5 id="Black-Widow"><a href="#Black-Widow" class="headerlink" title="Black Widow"></a>Black Widow</h5><h5 id="On-Site-On-Wiki-On-Youtube"><a href="#On-Site-On-Wiki-On-Youtube" class="headerlink" title="On Site   On Wiki  On Youtube"></a><a target="_blank" rel="noopener" href="https://www.marvel.com/movies/black-widow">On Site</a>   <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%BB%91%E5%AF%A1%E5%A9%A6_(%E9%9B%BB%E5%BD%B1)">On Wiki</a>  <a href="">On Youtube</a></h5><h5 id="知名配角-艾尔·安德森（Ever-Anderson）-Or-On-Wikipedia"><a href="#知名配角-艾尔·安德森（Ever-Anderson）-Or-On-Wikipedia" class="headerlink" title="知名配角 艾尔·安德森（Ever Anderson）  Or  On Wikipedia"></a>知名配角 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%89%BE%E5%B0%94%C2%B7%E5%AE%89%E5%BE%B7%E6%A3%AE/20443782">艾尔·安德森（Ever Anderson）</a>  Or  <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%89%BE%E8%96%87%C2%B7%E5%AE%89%E5%BE%B7%E6%A3%AE">On Wikipedia</a></h5><hr>
+<h5 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://m.media-amazon.com/images/M/MV5BNGE3ODYyNDYtODk1NS00ODRmLTk5YTYtOGMyMTZkYTEyODhlXkEyXkFqcGdeQXVyODQ4MjU1MDk@._V1_QL75_UX380_CR0,0,380,562_.jpg%20380w" srcset="/img/loading.gif" lazyload></h5><h5 id="漫威影業：傳奇"><a href="#漫威影業：傳奇" class="headerlink" title="漫威影業：傳奇"></a><a target="_blank" rel="noopener" href="https://www.marvel.com/tv-shows/marvel-studios-legends/1">漫威影業：傳奇</a></h5><h5 id="On-Wikipedia-Or-On-IMDB"><a href="#On-Wikipedia-Or-On-IMDB" class="headerlink" title="On Wikipedia Or On IMDB"></a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%BC%AB%E5%A8%81%E5%BD%B1%E6%A5%AD%EF%BC%9A%E5%82%B3%E5%A5%87">On Wikipedia</a> Or <a target="_blank" rel="noopener" href="https://www.imdb.com/title/tt13650480">On IMDB</a></h5><div class="note note-success">
+            <p>Marvel 以及 Marvel Video 的宣傳圖像版權歸屬是 Marvel.inc &amp; Disney.inc . </p>
+          </div>
+<hr>
+<h2 id="浏览器插件-amp-附加组件"><a href="#浏览器插件-amp-附加组件" class="headerlink" title="浏览器插件 &amp; 附加组件"></a>浏览器插件 &amp; 附加组件</h2><hr>
+<hr>
+<h5 id="AdGuard"><a href="#AdGuard" class="headerlink" title="AdGuard"></a>AdGuard</h5><hr>
+<p><a href="/tags/girls">Get Chrome </a></p>
+<p><a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/adguard-adblocker/">Get Firefox </a></p>
+<hr>
+<h5 id="Bitwarden"><a href="#Bitwarden" class="headerlink" title="Bitwarden"></a>Bitwarden</h5><p><a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/bitwarden-password-manager/">Get Firefox </a></p>
+<hr>
+<h2 id="各种手册-amp-PDF"><a href="#各种手册-amp-PDF" class="headerlink" title="各种手册 &amp; PDF"></a>各种手册 &amp; PDF</h2><hr>
+<hr>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><hr>
+<p>My IP API : <a target="_blank" rel="noopener" href="https://www.my-ip.io/api#:~:text=MyIP%20provides%20a%20blisteringly%20simple%20HTTP%20based%20API,call%20with%20an%20example%20of%20their%20expected%20response.">Get</a></p>
+<hr>
+<div class="note note-success">
+            <p>这里是版本信息 info</p>
+          </div>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm">版本 <span class="hljs-built_in">v3</span>.<span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
+<iframe src="/img/signed.jpg" width="80%" height="45%" frameborder="0" scrolling="no"></iframe>
+
+
+  
+</article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
