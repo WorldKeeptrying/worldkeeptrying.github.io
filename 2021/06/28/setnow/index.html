@@ -249,10 +249,11 @@
 <li>risrup VPN 僅限 Android <a href="">官網版</a> <a href="">加密包</a> 在App設定中打開 網橋 Bridges ，並關閉 Auto節點選擇，手動選擇節點 2 。</li>
 <li><a target="_blank" rel="noopener" href="https://app.simplenote.com/">Simple Note</a> 里面可能有重要信息，用Wordpress 帐号登录 ，或者参照 Bitwarden 所说的。</li>
 <li>使用 Bitvise SSH 連接服務器 <a href="">網盤 Download Link</a></li>
+<li>代理池 <a target="_blank" rel="noopener" href="https://github.com/zu1k/proxypool">Proxy Pool</a></li>
 </ul>
 <h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><ul>
 <li>进入到 owncloud 或其他节点，把 番茄工具箱 的 brook_linux_i386 存储 。</li>
-<li>使用 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./brook_linux_i386 client --server 198.12.0.0 --password pass_word --socks5 127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+<li>使用 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">./brook_linux_i386</span> client <span class="hljs-params">--server</span> 198.12.0.0 <span class="hljs-params">--password</span> pass_word <span class="hljs-params">--socks5</span> 127.0.0.1<span class="hljs-function">:1080</span><br></code></pre></td></tr></table></figure>
 在终端输入以上。</li>
 <li>Firefox 进入到 Store 安装 <a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/switchyomega/">SwitchyOmega</a> ,选择 Socks5 1080端口。</li>
 </ul>
@@ -274,7 +275,7 @@
 <li><p>Brook </p>
 </li>
 <li><p>把 番茄工具箱 的 brook_x32.exe 存储</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brook_x32.exe client --server 198.12.0.0 --password pass_word --socks5 127.0.0.1:1080</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">brook_x32</span>.exe client --server <span class="hljs-number">198.12.0.0</span> --password pass_word --socks<span class="hljs-number">5</span> <span class="hljs-number">127.0.0.1:1080</span><br></code></pre></td></tr></table></figure></li>
 <li><p>Firefox 进入到 Store 安装 <a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-TW/firefox/addon/switchyomega/">SwitchyOmega</a> ,选择 Socks5 1080端口。</p>
 </li>
 </ul>
