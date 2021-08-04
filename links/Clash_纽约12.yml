@@ -1,7 +1,6 @@
 proxies:
-  - {name: 纽约1, server: x.aphone.space, port: 443, type: vmess, uuid: a7aca034-0258-502c-01a2-279ac0245a8c, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /xray, ws-headers: {Host: x.aphone.space}}
-  - {name: No.1, server: x.aphone.space, port: 443, type: vmess, uuid: 98e6aaab-b4fe-4489-f5bf-eaa2b26d33d9, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /ray, ws-headers: {Host: x.aphone.space}}
-  - {name: 纽约2, server: aphone.space, port: 443, type: vmess, uuid: b8fb10b6-961d-4f93-92ae-f3d5d0316d3a, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: aphone.space}}
+  - {name: No.1, server: x.aphone.space, port: 443, type: vmess, uuid: 37a73e7c-5dc5-470f-c888-41b296385184, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /ray, ws-headers: {Host: x.aphone.space}}
+  - {name: No.2, server: aphone.space, port: 443, type: vmess, uuid: b8fb10b6-961d-4f93-92ae-f3d5d0316d3a, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: aphone.space}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
