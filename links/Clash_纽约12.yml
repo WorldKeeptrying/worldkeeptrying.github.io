@@ -7,51 +7,51 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     proxies:
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
   - name: 🎯 全球直连
     type: select
     proxies:
       - DIRECT
       - 🚀 节点选择
       - ♻️ 自动选择
-      - 纽约2
+      - No.1
   - name: 🛑 全球拦截
     type: select
     proxies:
@@ -68,8 +68,8 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 纽约1
-      - 纽约2
+      - No.1
+      - No.2
 rules:
  - DOMAIN-SUFFIX,acl4ssr,🎯 全球直连
  - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
