@@ -1,6 +1,6 @@
 proxies:
   - {name: No.1, server: x.aphone.space, port: 443, type: vmess, uuid: 37a73e7c-5dc5-470f-c888-41b296385184, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /ray, ws-headers: {Host: x.aphone.space}}
-  - {name: No.2, server: aphone.space, port: 443, type: vmess, uuid: b8fb10b6-961d-4f93-92ae-f3d5d0316d3a, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: aphone.space}}
+  - {name: No.2, server: io.herwiki.xyz, port: 443, type: vmess, uuid: b8fb10b6-961d-4f93-92ae-f3d5d0316d3a, alterId: 64, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /xray, ws-headers: {Host: io.herwiki.xyz}}
   - {"name":"Trojan-Go","server":"198.12.105.214","type":"trojan","country":"🇭🇰 Trojan-Go","port":443,"password":"test","skip-cert-verify":true,"sni":"x.aphone.space","udp":true}
 proxy-groups:
   - name: 🚀 节点选择
