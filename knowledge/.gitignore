@@ -1,0 +1,15 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/manifest.json
+.obsidian/cache/
+
+# OS
+.DS_Store
+.trash/
+Thumbs.db
+
+# Dependencies
+node_modules/
