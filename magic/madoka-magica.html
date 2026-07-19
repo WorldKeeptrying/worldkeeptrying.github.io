@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔法少女小圆 ✨ 剧情全览</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap');
+
+        :root {
+            --madoka-pink: #FFB6C1;
+            --homura-purple: #9B59B6;
+            --mami-gold: #F1C40F;
+            --sayaka-blue: #3498DB;
+            --kyoko-red: #E74C3C;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #0f0f1a;
+            --card-bg: #16213e;
+            --text-light: #e0e0e0;
+            --accent-glow: rgba(155, 89, 182, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* ===== 星空背景 ===== */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        /* ===== 主容器 ===== */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== 标题区 ===== */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--madoka-pink), var(--homura-purple), var(--sayaka-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5)); }
+            50% { filter: drop-shadow(0 0 25px rgba(155, 89, 182, 0.8)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--madoka-pink);
+            font-weight: 300;
+        }
+
+        .hero-kaomoji {
+            font-size: 4rem;
+            display: block;
+            margin: 20px 0;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== 角色卡片区 ===== */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 50px 0 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--homura-purple);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '✦';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--darker-bg);
+            padding: 0 15px;
+            color: var(--homura-purple);
+            font-size: 1.2rem;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .char-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .char-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-accent);
+        }
+
+        .char-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--accent-glow);
+            border-color: var(--card-accent);
+        }
+
+        .char-kaomoji {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .char-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--card-accent);
+            margin-bottom: 5px;
+        }
+
+        .char-name-en {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .char-desc {
+            font-size: 0.9rem;
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* ===== 时间线 ===== */
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--madoka-pink), var(--homura-purple), var(--sayaka-blue));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 35px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 18px;
+            top: 5px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 3px solid var(--marker-color, var(--homura-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            z-index: 2;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px 25px;
+            border-left: 4px solid var(--marker-color, var(--homura-purple));
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: #1a2744;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-episode {
+            font-size: 0.8rem;
+            color: var(--marker-color, var(--homura-purple));
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-text {
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .timeline-kaomoji {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        /* ===== 魔兽篇专区 ===== */
+        .wraith-section {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.9), rgba(15, 15, 26, 0.95));
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(155, 89, 182, 0.2);
+            position: relative;
+        }
+
+        .wraith-section::before {
+            content: '⚔';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            background: var(--darker-bg);
+            padding: 0 20px;
+        }
+
+        .wraith-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .wraith-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .wraith-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .wraith-card h4 {
+            color: var(--madoka-pink);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .wraith-card p {
+            font-size: 0.85rem;
+            color: #999;
+            line-height: 1.7;
+        }
+
+        /* ===== 对比表 ===== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: var(--homura-purple);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            background: var(--card-bg);
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: #1a2744;
+        }
+
+        /* ===== 名言区 ===== */
+        .quotes-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .quote-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+            border-left: 4px solid var(--quote-color, var(--homura-purple));
+        }
+
+        .quote-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.05);
+            font-family: serif;
+        }
+
+        .quote-text {
+            font-size: 1rem;
+            font-style: italic;
+            color: #ddd;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            font-size: 0.85rem;
+            color: var(--quote-color, var(--homura-purple));
+            font-weight: 700;
+        }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .footer-kaomoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* ===== 分隔装饰 ===== */
+        .divider {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.5rem;
+            color: var(--homura-purple);
+            opacity: 0.5;
+        }
+
+        /* ===== 标签 ===== */
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin: 3px;
+        }
+
+        .tag-pink { background: rgba(255, 182, 193, 0.2); color: var(--madoka-pink); }
+        .tag-purple { background: rgba(155, 89, 182, 0.2); color: var(--homura-purple); }
+        .tag-blue { background: rgba(52, 152, 219, 0.2); color: var(--sayaka-blue); }
+        .tag-red { background: rgba(231, 76, 60, 0.2); color: var(--kyoko-red); }
+        .tag-gold { background: rgba(241, 196, 15, 0.2); color: var(--mami-gold); }
+
+        /* ===== 滚动动画 ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== 灵魂宝石动画 ===== */
+        .soul-gem {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: gem-glow 2s ease-in-out infinite;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        @keyframes gem-glow {
+            0%, 100% { box-shadow: 0 0 5px currentColor; }
+            50% { box-shadow: 0 0 20px currentColor, 0 0 40px currentColor; }
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2rem; }
+            .hero-kaomoji { font-size: 3rem; }
+            .characters-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 15px; }
+            .timeline-item { padding-left: 50px; }
+            .timeline-marker { left: 3px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 星空背景 -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+
+        <!-- ===== 标题区 ===== -->
+        <header class="hero">
+            <span class="hero-kaomoji">( ◕‿◕ )✨</span>
+            <h1 class="hero-title">魔法少女小圆</h1>
+            <p class="hero-subtitle">Puella Magi Madoka Magica — 剧情全览 ★</p>
+            <p style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                <span class="tag tag-pink">TV动画 12话</span>
+                <span class="tag tag-purple">魔兽篇 漫画</span>
+                <span class="tag tag-blue">叛逆的物语</span>
+            </p>
+        </header>
+
+        <!-- ===== 角色区 ===== -->
+        <h2 class="section-title">✧ 主要角色 ✧</h2>
+
+        <div class="characters-grid">
+            <div class="char-card" style="--card-accent: var(--madoka-pink);">
+                <span class="char-kaomoji">( ◕‿◕ )</span>
+                <div class="char-name">鹿目圆</div>
+                <div class="char-name-en">Kaname Madoka</div>
+                <div class="char-desc">怯生生的邻家女孩，外柔内刚。最终许下愿望消灭所有魔女，成为「圆环之理」——宇宙级别的概念存在。</div>
+                <span class="soul-gem" style="color: var(--madoka-pink);"></span>
+            </div>
+
+            <div class="char-card" style="--card-accent: var(--homura-purple);">
+                <span class="char-kaomoji">( ¬_¬ )</span>
+                <div class="char-name">晓美焰</div>
+                <div class="char-name-en">Akemi Homura</div>
+                <div class="char-desc">高冷坚强的转学生，拥有时间回溯能力。为拯救小圆经历了上百次轮回，是唯一记得小圆的人。</div>
+                <span class="soul-gem" style="color: var(--homura-purple);"></span>
+            </div>
+
+            <div class="char-card" style="--card-accent: var(--mami-gold);">
+                <span class="char-kaomoji">( ◠‿◠ )</span>
+                <div class="char-name">巴麻美</div>
+                <div class="char-name-en">Tomoe Mami</div>
+                <div class="char-desc">亲和力强的大姐姐，经验丰富的魔法少女。第三话中拒绝小焰的帮助，被魔女杀死。Tiro Finale!</div>
+                <span class="soul-gem" style="color: var(--mami-gold);"></span>
+            </div>
+
+            <div class="char-card" style="--card-accent: var(--sayaka-blue);">
+                <span class="char-kaomoji">( ◕ᴗ◕ )</span>
+                <div class="char-name">美树沙耶香</div>
+                <div class="char-name-en">Miki Sayaka</div>
+                <div class="char-desc">外向乐观开朗，为治愈青梅竹马的手伤成为魔法少女。因绝望灵魂宝石污染，变成人鱼魔女。</div>
+                <span class="soul-gem" style="color: var(--sayaka-blue);"></span>
+            </div>
+
+            <div class="char-card" style="--card-accent: var(--kyoko-red);">
+                <span class="char-kaomoji">( ಠ_ಠ )</span>
+                <div class="char-name">佐仓杏子</div>
+                <div class="char-name-en">Sakura Kyoko</div>
+                <div class="char-desc">傲娇型魔法少女，曾许愿帮助父亲传教却导致家庭破碎。最终为拯救沙耶香与她同归于尽。</div>
+                <span class="soul-gem" style="color: var(--kyoko-red);"></span>
+            </div>
+
+            <div class="char-card" style="--card-accent: #fff;">
+                <span class="char-kaomoji">( ◠‿◠ )☞</span>
+                <div class="char-name">丘比 (QB)</div>
+                <div class="char-name-en">Kyubey / Incubator</div>
+                <div class="char-desc">外表可爱内心邪魅的外星生物。通过让少女变成魔女时产生的巨大能量为自己的文明供能。</div>
+            </div>
+        </div>
+
+        <!-- ===== TV版时间线 ===== -->
+        <h2 class="section-title">✧ TV版剧情时间线 ✧</h2>
+
+        <div class="timeline">
+            <div class="timeline-item fade-in" style="--marker-color: var(--madoka-pink);">
+                <div class="timeline-marker" style="border-color: var(--madoka-pink);">
+                    <span style="font-size: 0.6rem;">1-2</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--madoka-pink);">第1-2话 · 魔法少女的邀请</div>
+                    <div class="timeline-title">梦境与转学生</div>
+                    <div class="timeline-text">
+                        小圆梦见世界毁灭和受伤的黑发少女。神秘转学生晓美焰转入见泷原中学，极力阻止小圆成为魔法少女，甚至追杀丘比。
+                        <br><span class="timeline-kaomoji">( ◕‿◕ )？</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="--marker-color: var(--mami-gold);">
+                <div class="timeline-marker" style="border-color: var(--mami-gold);">
+                    <span style="font-size: 0.6rem;">3</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--mami-gold);">第3话 · 学姐的陨落</div>
+                    <div class="timeline-title">已经没什么好怕的了</div>
+                    <div class="timeline-text">
+                        巴麻美救了小圆和沙耶香，展示了魔法少女的华丽战斗。但在讨伐魔女时拒绝小焰的帮助，<strong style="color: var(--mami-gold);">被魔女杀死</strong>。这一事件彻底改变了故事的走向。
+                        <br><span class="timeline-kaomoji">( ╥_╥ )</span> <span class="tag tag-gold">Tiro Finale</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="--marker-color: var(--sayaka-blue);">
+                <div class="timeline-marker" style="border-color: var(--sayaka-blue);">
+                    <span style="font-size: 0.6rem;">4-8</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--sayaka-blue);">第4-8话 · 沙耶香的堕落</div>
+                    <div class="timeline-title">奇迹与魔法的代价</div>
+                    <div class="timeline-text">
+                        沙耶香为治愈上条恭介的手伤许愿成为魔法少女。但她渐渐发现<strong>灵魂宝石</strong>的真相——灵魂被抽出体外，且会被负面情绪污染。目睹杏子的悲剧后，沙耶香陷入嫉妒与绝望，最终<strong style="color: var(--sayaka-blue);">灵魂宝石彻底污染，变成人鱼魔女</strong>。
+                        <br><span class="timeline-kaomoji">( ；∀；)</span> → <span class="timeline-kaomoji">( 👹 )</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="--marker-color: var(--kyoko-red);">
+                <div class="timeline-marker" style="border-color: var(--kyoko-red);">
+                    <span style="font-size: 0.6rem;">9</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--kyoko-red);">第9话 · 杏子的牺牲</div>
+                    <div class="timeline-title">杏子与沙耶香，同归于尽</div>
+                    <div class="timeline-text">
+                        傲娇的杏子了解沙耶香的真相后两人刚要和解，但沙耶香已变成魔女。杏子为了拯救沙耶香，选择与她<strong style="color: var(--kyoko-red);">同归于尽</strong>。
+                        <br><span class="timeline-kaomoji">( ╥﹏╥ )</span> <span class="tag tag-red">殉情？</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="--marker-color: var(--homura-purple);">
+                <div class="timeline-marker" style="border-color: var(--homura-purple);">
+                    <span style="font-size: 0.6rem;">10</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--homura-purple);">第10话 · 真相揭晓</div>
+                    <div class="timeline-title">时间循环的悲歌</div>
+                    <div class="timeline-text">
+                        <strong>全作最震撼的转折！</strong>小焰揭示了真相——她来自另一个时间线。原本的小圆帮助小焰打败魔女，但小圆在对抗「魔女之夜」时变成了最强大的魔女。小焰为了拯救小圆，<strong style="color: var(--homura-purple);">一次次回到过去</strong>，不断调整时间线。
+                        <br><span class="timeline-kaomoji">( ⊙_⊙ )</span> → <span class="timeline-kaomoji">( ﾟДﾟ)</span>
+                        <br><br>
+                        <span class="tag tag-purple">时间回溯</span>
+                        <span class="tag tag-purple">上百次轮回</span>
+                        <span class="tag tag-purple">唯一记得小圆的人</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in" style="--marker-color: var(--madoka-pink);">
+                <div class="timeline-marker" style="border-color: var(--madoka-pink);">
+                    <span style="font-size: 0.6rem;">11-12</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-episode" style="color: var(--madoka-pink);">第11-12话 · 圆的终极祈愿</div>
+                    <div class="timeline-title">我…我要让所有魔女在诞生前消灭！</div>
+                    <div class="timeline-text">
+                        小圆在得知一切真相后，许下了最终愿望——<strong style="color: var(--madoka-pink);">「消灭过去、现在、未来所有时间线上的魔女」</strong>。小圆因此消失，成为<strong>「圆环之理」</strong>（Law of Cycles）——宇宙级别的存在。世界被重置，只有小焰还记得小圆。
+                        <br><br>
+                        <span class="timeline-kaomoji">( ◕‿◕ )✨</span> → <span class="timeline-kaomoji">( ✧Д✧)YES!</span>
+                        <br><br>
+                        <span class="tag tag-pink">圆环之理</span>
+                        <span class="tag tag-pink">宇宙法则改写</span>
+                        <span class="tag tag-purple">焰独自战斗</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <!-- ===== 魔兽篇 ===== -->
+        <div class="wraith-section fade-in">
+            <h2 class="section-title" style="margin-top: 0;">✧ 魔兽篇 剧情 ✧</h2>
+            <p style="text-align: center; color: #888; margin-bottom: 20px;">
+                <span class="tag tag-purple">官方外传漫画</span>
+                <span class="tag tag-blue">全9话 / 3卷</span>
+                <span class="tag tag-pink">TV版 → 叛逆的物语 之间</span>
+            </p>
+
+            <div style="text-align: center; font-size: 3rem; margin: 20px 0;">
+                ( ◕‿◕ )⚔( 👾 )
+            </div>
+
+            <p style="color: #aaa; text-align: center; margin-bottom: 30px; font-size: 0.95rem;">
+                小圆成为「圆环之理」后，魔女被彻底消除。但取而代之的是全新的敌人——<strong style="color: var(--homura-purple);">「魔兽」（Wraiths）</strong>，它们以人类情感为食。
+            </p>
+
+            <div class="wraith-grid">
+                <div class="wraith-card">
+                    <h4>( ◕ᴗ◕ ) 沙耶香的复活</h4>
+                    <p>小圆的愿望从根本上消除了魔女的存在，沙耶香因此复活。她和麻美、杏子一起继续作为魔法少女讨伐魔兽。</p>
+                </div>
+
+                <div class="wraith-card">
+                    <h4>( ಠ_ಠ ) 理念冲突</h4>
+                    <p>沙耶香复活后与杏子再次产生理念冲突。杏子对沙耶香的"正义感"和"自我牺牲"态度仍抱有复杂情感——两人曾在前一条世界线中同归于尽。</p>
+                </div>
+
+                <div class="wraith-card">
+                    <h4>( ¬_¬ ) 焰的孤独</h4>
+                    <p>晓美焰是唯一保留完整记忆的人。她独自背负对小圆的思念，在沙漠中独自与魔兽作战，听到小圆对她喊"加油"的声音。</p>
+                </div>
+
+                <div class="wraith-card">
+                    <h4>( 👾 ) 涅槃魔兽</h4>
+                    <p>最强魔兽「涅槃魔兽」出现。美树沙耶香在与其战斗中力竭而亡——这解释了TV结局中杏子提到的"沙耶香用尽力量消失了"。</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <p style="color: #999; font-size: 0.9rem;">
+                    <span class="timeline-kaomoji">( ╥_╥ )</span> 即使魔女不存在了，魔法少女仍会因灵魂宝石污染而死去…
+                </p>
+                <p style="color: var(--homura-purple); font-size: 0.9rem; margin-top: 10px;">
+                    → 这为《叛逆的物语》中小焰的魔女化埋下伏笔 <span class="timeline-kaomoji">( 🖤 )</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- ===== 对比表 ===== -->
+        <h2 class="section-title">✧ TV版 vs 魔兽篇 ✧</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>对比项</th>
+                    <th>TV版原作</th>
+                    <th>魔兽篇</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>敌人类型</td>
+                    <td>魔女 <span class="timeline-kaomoji" style="font-size: 1rem;">( 👹 )</span></td>
+                    <td>魔兽 (Wraiths) <span class="timeline-kaomoji" style="font-size: 1rem;">( 👾 )</span></td>
+                </tr>
+                <tr>
+                    <td>沙耶香的命运</td>
+                    <td>变成人鱼魔女</td>
+                    <td>作为人类复活，讨伐涅槃魔兽而亡</td>
+                </tr>
+                <tr>
+                    <td>杏子的命运</td>
+                    <td>与沙耶香同归于尽</td>
+                    <td>存活，继续战斗</td>
+                </tr>
+                <tr>
+                    <td>净化手段</td>
+                    <td>悲叹之种</td>
+                    <td>不再有悲叹之种</td>
+                </tr>
+                <tr>
+                    <td>晓美焰的魔法</td>
+                    <td>时间操作 + 军火</td>
+                    <td>记忆操作 + 长弓</td>
+                </tr>
+                <tr>
+                    <td>小圆的存在</td>
+                    <td>成为圆环之理消失</td>
+                    <td>仅存在于焰的记忆中</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="divider">✦ ✦ ✦</div>
+
+        <!-- ===== 名言区 ===== -->
+        <h2 class="section-title">✧ 经典名言 ✧</h2>
+
+        <div class="quotes-section">
+            <div class="quote-card" style="--quote-color: var(--madoka-pink);">
+                <div class="quote-text">「我…我要让所有宇宙的过去、现在和未来的魔女在形成之前消灭，由我亲手！」</div>
+                <div class="quote-author">( ◕‿◕ ) — 鹿目圆</div>
+            </div>
+
+            <div class="quote-card" style="--quote-color: var(--homura-purple);">
+                <div class="quote-text">「约定好了！绝对会去救你的！」</div>
+                <div class="quote-author">( ¬_¬ ) — 晓美焰</div>
+            </div>
+
+            <div class="quote-card" style="--quote-color: var(--mami-gold);">
+                <div class="quote-text">「已经没什么好怕的了。」</div>
+                <div class="quote-author">( ◠‿◠ ) — 巴麻美</div>
+            </div>
+
+            <div class="quote-card" style="--quote-color: var(--sayaka-blue);">
+                <div class="quote-text">「奇迹和魔法，都是需要代价的。」</div>
+                <div class="quote-author">( ◕ᴗ◕ ) — 美树沙耶香</div>
+            </div>
+
+            <div class="quote-card" style="--quote-color: #fff;">
+                <div class="quote-text">「和我签订契约，成为魔法少女吧！」</div>
+                <div class="quote-author">( ◠‿◠ )☞ — 丘比 (QB)</div>
+            </div>
+
+            <div class="quote-card" style="--quote-color: var(--homura-purple);">
+                <div class="quote-text">「再也不依靠任何人，也不需要让任何人理解。」</div>
+                <div class="quote-author">( 🖤 ) — 晓美焰</div>
+            </div>
+        </div>
+
+        <!-- ===== 页脚 ===== -->
+        <footer class="footer">
+            <span class="footer-kaomoji">( ◕‿◕ )♡</span>
+            <p>魔法少女小圆 · Puella Magi Madoka Magica</p>
+            <p style="margin-top: 5px;">Magica Quartet 原作 | SHAFT 动画制作 | 虚渊玄 编剧</p>
+            <p style="margin-top: 15px; color: #444;">
+                ✨ 和我签订契约，成为魔法少女吧！ ✨
+            </p>
+            <p style="margin-top: 10px; font-size: 2rem;">
+                ( ◕‿◕ )( ◕ᴗ◕ )( ◠‿◠ )( ಠ_ಠ )( ¬_¬ )
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // ===== 生成星空 =====
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const count = 150;
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                star.style.animationDelay = Math.random() * 5 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+
+        // ===== 滚动淡入动画 =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
